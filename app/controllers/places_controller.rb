@@ -1,6 +1,6 @@
 class PlacesController < ApplicationController
   def index
-    @places = Place.all
+    @places = Place.order("created_at DESC")
   end
 
   def new
