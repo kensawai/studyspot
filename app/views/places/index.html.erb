@@ -1,3 +1,10 @@
-  <p>へえええええええ</p>
+ <% @places.each do |place| %>
+ <h2><%= simple_format(place.name) %></h2>
+ <img src= "<%= place.image %>"><br>
+ <h3><a href ="<%= place.url%>">地図</a></h3>
 
-  <%= @place.name %>
+
+ <p>--------------------------------------------------------------------</p>
+
+<% end %>
+
