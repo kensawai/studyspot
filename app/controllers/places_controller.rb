@@ -1,6 +1,6 @@
 class PlacesController < ApplicationController
   def index
-    @places = Place.order("created_at DESC")
+    @places = Place.order("created_at DESC").page(params[:page]).per(3)
   end
 
   def new
