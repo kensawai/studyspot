@@ -1,0 +1,28 @@
+<%= form_tag('/places', method: :post) do %>
+<h3>
+勉強できる投稿する
+</h3>
+
+<input placeholder="場所の名前" type = "text" name="name"><br><br>
+<input placeholder="場所の写真" type = "text" name="iamge"><br><br>
+<input placeholder="地図のURL" type="text" name ="url"><br>
+<br>
+
+  <h4>Wifi</h4>
+<select name = "wifi">
+  <option value ="true">あり</option>
+  <option value ="false">なし</optino>
+  </select>
+<br><br>
+  <h4>電源</h4>
+<select name = "outlet">
+  <option value ="true">あり</option>
+  <option value ="false">なし</optino>
+  </select>
+<br><br>
+
+<br>
+<input type = "submit" value="投稿する">
+
+<% end %>
+

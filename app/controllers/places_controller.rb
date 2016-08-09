@@ -3,4 +3,10 @@ class PlacesController < ApplicationController
     @places = Place.all
   end
 
+  def new
+
+  end
+
+
+
 end
