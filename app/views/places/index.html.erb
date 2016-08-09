@@ -3,6 +3,19 @@
  <img src= "<%= place.image %>"><br>
  <h3><a href ="<%= place.url%>">地図</a></h3>
 
+ <% if place.wifi == true %>
+ <p>Wifiあり</p>
+ <% else %>
+ <p>Wifiなし</p>
+ <%end%>
+
+ <% if place.outlet == true %>
+ <p>電源あり</p>
+ <% else %>
+ <p>電源なし</p>
+
+ <%end%>
+
 
  <p>--------------------------------------------------------------------</p>
 
