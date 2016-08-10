@@ -7,25 +7,50 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <h1><a href ="/"><%= image_tag 'logo.png' %></a></h1>
+<div class = "container">
+  <div class="ken"><a href ="/"><%= image_tag 'logo.png' %></a></div>
 
 <% if user_signed_in? %>
 
-<span><%= current_user.nickname %>さんでログイン中<br><br>
-<a href ="/users/<%= current_user.id %>">まいぺーじ</a>
+<div class="alert alert-success" role="alert"><%= current_user.nickname %>さんでログイン中</div>
 
-  <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-  <a href="/places/new">投稿する</a>
+<br>
+<div class="btn-group btn-group-justified" role="group" aria-label="...">
+  <div class="btn-group" role="group">
+    <button type="button" class="btn btn-default"><a href ="/users/<%= current_user.id %>">マイページ</a></button>
+  </div>
+  <div class="btn-group" role="group">
+    <button type="button" class="btn btn-default"> <%= link_to "ログアウト", destroy_user_session_path, method: :delete %></button>
+  </div>
+  <div class="btn-group" role="group">
+    <button type="button" class="btn btn-default"><a href="/places/new">投稿する</a></button>
+  </div>
+</div>
+
+
+
+ 
+  
 
   <% else %>
 
-  <%= link_to "ログイン", new_user_session_path, class: 'post' %>
-  <%= link_to "新規登録", new_user_registration_path, class: :'post' %>
+<div class="btn-group btn-group-justified" role="group" aria-label="...">
+  <div class="btn-group" role="group">
+    <button type="button" class="btn btn-default"><%= link_to "ログイン", new_user_session_path, class: 'post' %></button>
+  </div>
+  <div class="btn-group" role="group">
+    <button type="button" class="btn btn-default"> <%= link_to "新規登録", new_user_registration_path, class: :'post' %></button>
+  </div>
+</div>
+
+  
+ 
 
 <% end %>
 
 
 <%= yield %>
 
+  </div>
 </body>
 </html>

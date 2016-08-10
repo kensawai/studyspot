@@ -1,7 +1,7 @@
   <p><%= @nickname %>さんの投稿一覧</p>
  <% @places.each do |place| %>
  <h2><%= simple_format(place.name) %></h2>
- <img src= "<%= place.image %>"><br>
+ <img src= "<%= place.image %>" class ="sawai"><br>
  <h3><a href ="<%= place.url%>">地図</a></h3>
 
  <% if place.wifi == true %>
