@@ -3,7 +3,7 @@ class PlacesController < ApplicationController
   before_action :move_to_index, except: :index
 
   def index
-    @places = Place.order("created_at DESC").page(params[:page]).per(3)
+    @places = Place.includes(:user).order("created_at DESC").page(params[:page]).per(3)
   end
 
   def new
