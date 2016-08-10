@@ -10,7 +10,7 @@ class PlacesController < ApplicationController
   end
 
   def create
-    Place.create(place_params)
+    Place.create(name: place_params[:name], image: place_params[:image], url: place_params[:url], wifi: place_params[:wifi], outlet: place_params[:outlet], user_id: current_user.id)
 end
 
 private

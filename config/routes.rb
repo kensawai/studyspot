@@ -6,5 +6,6 @@ Rails.application.routes.draw do
 get 'places/new' => 'places#new'
 get 'places' => 'places#index'
 post 'places' => 'places#create'
+get 'users/:id' => 'users#show'
 
 end
