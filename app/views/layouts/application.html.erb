@@ -11,6 +11,9 @@
 
 <% if user_signed_in? %>
 
+<span><%= current_user.nickname %>さんでログイン中<br><br>
+<a href ="/users/<%= current_user.id %>">まいぺーじ</a>
+
   <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
   <a href="/places/new">投稿する</a>
 
