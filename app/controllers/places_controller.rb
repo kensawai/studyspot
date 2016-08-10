@@ -13,6 +13,18 @@ class PlacesController < ApplicationController
     Place.create(name: place_params[:name], image: place_params[:image], url: place_params[:url], wifi: place_params[:wifi], outlet: place_params[:outlet], user_id: current_user.id)
 end
 
+def destroy
+  place = Place.find(params[:id])
+  if place.user_id == current_user.id
+    place.destroy
+  end
+end
+
+
+
+
+
+
 private
 def place_params
   params.permit(:name, :image, :url, :wifi, :outlet)

@@ -1,4 +1,13 @@
+
+
  <% @places.each do |place| %>
+
+ <% if user_signed_in? && current_user.id == place.user.id %>
+
+<%= link_to '削除', "/places/#{place.id}", method: :delete %>
+
+<% end %>
+
  <h2><%= simple_format(place.name) %></h2>
  <img src= "<%= place.image %>"><br>
  <h3><a href ="<%= place.url%>">地図</a></h3>
