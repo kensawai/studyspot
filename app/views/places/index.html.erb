@@ -4,6 +4,7 @@
 
  <% if user_signed_in? && current_user.id == place.user.id %>
 
+<%= link_to '編集', "/places/#{place.id}/edit", method: :get %>
 <%= link_to '削除', "/places/#{place.id}", method: :delete %>
 
 <% end %>

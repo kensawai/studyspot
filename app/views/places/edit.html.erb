@@ -1,0 +1,13 @@
+<%= form_tag("/places/#{@place.id}", method: :patch) do %>
+
+  <h3>編集する</h3>
+
+<input placeholder="お店の名前をいれてね" type = "text" name = "name" value= "<%= @place.name %>" autofocus = "true" ></input>
+<input placeholder="地図のURL" type = "text" name = "url" value= "<%= @place.url %>" autofocus = "true" ></input>
+
+<input placeholder="お店の画像" type = "text" name = "image" value= "<%= @place.image %>" autofocus = "true" ></input>
+
+<input type ="submit" value ="SENT">
+
+<% end %>
+
